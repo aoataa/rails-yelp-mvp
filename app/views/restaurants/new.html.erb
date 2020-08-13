@@ -1,0 +1,16 @@
+<div class="container">
+  <%#= render 'form', restaurant: @restaurant %>
+
+
+  <%= simple_form_for [ @restaurant] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :category,collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
+
+
+    <%= f.submit "Create restaurant", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to 'Back', restaurants_path %>
+
+</div>
